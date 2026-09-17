@@ -1,5 +1,8 @@
 # Socialize
 
+Snapshot builds use LandoriaModActions@v4.3 and the shared private references.
+Requires MOD_REFERENCES_TOKEN. Runs on main only when both versions match X.Y.Z-snapshot.
+
 Adds player groups for adventures and expeditions, private messaging, map sharing, and a dedicated group chat channel.
 Groups are not persistent: players leave them when they disconnect and do not rejoin automatically when they return.
 
