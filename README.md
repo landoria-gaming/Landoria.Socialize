@@ -1,13 +1,7 @@
 # Socialize
 
-Requires MOD_REFERENCES_TOKEN. All five versions must match; only manifest and informational version use -snapshot.
-
 Adds player groups for adventures and expeditions, private messaging, map sharing, and a dedicated group chat channel.
 Groups are not persistent: players leave them when they disconnect and do not rejoin automatically when they return.
-
-## Valheim compatibility
-
-Current release: 1.0.x
 
 ## Features
 
