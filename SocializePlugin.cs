@@ -17,33 +17,12 @@ namespace Landoria.Socialize
 
         private Harmony _harmony;
 
-        private void RegisterPatches()
-        {
-            _harmony.CreateClassProcessor(typeof(RegisterSocialCommandsPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(RequestSocialStateOnSpawnPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(DisablePrivateWorldTextPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(LimitMapPingToGroupPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(PersistentChatInputPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(PersistentChatChannelPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(SocialChatRangePatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(ChatPresentationPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(AutoDisplaySimpleChatPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FormatTitleChatPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(FormatUserChatPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(GroupNewConnectionPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(GroupDisconnectPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(UpdateMapPingVisibilityPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(DisablePublicPositionPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(ShowGroupMembersOnMapPatch)).Patch();
-            _harmony.CreateClassProcessor(typeof(HidePublicPositionTogglePatch)).Patch();
-        }
-
         private void Awake()
         {
             Log = Logger;
             Logger.LogInfo($"AssemblyVersion: {GetType().Assembly.GetName().Version}.");
             _harmony = new Harmony(PluginGuid);
-            RegisterPatches();
+            _harmony.PatchAll();
             Settings = new SocializeSettings();
             Log.LogInfo($"{PluginName} {PluginVersion} is loaded.");
         }
