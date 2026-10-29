@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.17
+
+- Updated to BepInExPack_Valheim-5.4.2360
+
 ## 1.0.16
 
 - Migration to Valheim 1.0.x.
